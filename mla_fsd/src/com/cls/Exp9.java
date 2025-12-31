@@ -1,0 +1,71 @@
+package com.cls;
+
+class StackArray{
+	
+	private int maxSize;
+	private int[] arr;
+	private int top;
+	
+	public StackArray(int size) {
+		this.maxSize = size;
+		this.arr = new int[maxSize];
+		this.top = -1;
+	}
+	
+	public boolean isFull()
+	{
+		return (top == maxSize-1);
+	}
+	
+	public boolean isEmpty()
+	{
+		return (top == -1);
+	}
+	
+	public void push(int value) {
+		if(isFull()) {
+			System.out.println("Stack Overflow");
+			return ;
+		}
+		arr[++top] = value;
+		System.out.println("Pushed element : "+value);
+		}
+	
+	public int pop() {
+		if(isEmpty()) {
+			System.out.println("Stack Underflow");
+			return -1;
+		}
+		int tp = arr[top];
+		top--;
+		System.out.println("Popped Element "+tp);
+		return tp;
+	}
+	
+	public int peek()
+	{
+		if(isEmpty()) {
+			System.out.println("Stack Underflow");
+			return -1;
+		}
+		return arr[top];
+	}
+	
+}
+
+public class Exp9 {
+
+	public static void main(String[] args) {
+		
+		StackArray obj = new StackArray(5);
+		obj.push(11);
+		obj.push(15);
+		obj.push(19);
+		obj.push(23);
+		obj.push(27);
+		
+		obj.pop();
+		System.out.println(obj.peek());
+	}
+
+}

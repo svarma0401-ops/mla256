@@ -1,0 +1,29 @@
+package com.cls;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
+public class Exp1 {
+
+	public static void main(String[] args) {
+		
+		//Collection data = new ArrayList();
+		//List data = new ArrayList();
+		ArrayList data = new ArrayList();
+		data.add(100);
+		data.add("JAVA");
+		data.add('a');
+		data.add(1000);
+		data.add(100);
+		data.add(22.222f);
+		data.add(true);
+		data.add("hello");
+		System.out.println(data);
+		
+		
+		
+		
+	}
+
+}

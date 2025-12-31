@@ -1,0 +1,51 @@
+
+package com.dtm;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.ArrayList;
+
+class CustomerInfo {
+    private String name;
+
+    CustomerInfo(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public String toString() {
+        return "Customer{name='" + name + "'}";
+    }
+}
+
+public class Sample {
+    public static List<CustomerInfo> filterByName(List<CustomerInfo> customers, String startsWith, String endsWith) {
+        List<CustomerInfo> result = new ArrayList<>();
+        for (CustomerInfo c : customers) {
+            String name = c.getName();
+            if ((startsWith == null || name.startsWith(startsWith)) &&
+                (endsWith == null || name.endsWith(endsWith))) {
+                result.add(c);
+            }
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        List<CustomerInfo> customers = Arrays.asList(
+            new CustomerInfo("sanjay"),
+            new CustomerInfo("suraj"),
+            new CustomerInfo("sury"),
+            new CustomerInfo("sunray")
+        );
+
+        System.out.println("All Customers: " + customers);
+
+        List<CustomerInfo> filtered = filterByName(customers, "s", "y");
+        System.out.println("Filtered (startsWith 's', endsWith 'y'): " + filtered);
+    }
+}

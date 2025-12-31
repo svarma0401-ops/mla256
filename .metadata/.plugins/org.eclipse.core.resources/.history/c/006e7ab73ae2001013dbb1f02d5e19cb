@@ -1,0 +1,21 @@
+package com.cls;
+
+class Book {
+	private int id;
+	private String name;
+	private int price;
+	
+	public Book(int id, String name, int price) {
+		this.id =id;
+		this.name=name;
+		this.price = price;
+	}
+}
+public class Exp6 {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

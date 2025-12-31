@@ -1,0 +1,14 @@
+package com.dtm;
+
+import java.util.ArrayList;
+
+public class Exp2 {
+
+	public static void main(String[] args) {
+		
+		ArrayList<E> data = new ArrayList();
+		
+		data.add(10);
+	}
+
+}

@@ -1,0 +1,43 @@
+package com.custom.qs;
+
+class Node<T>
+{
+	T data;
+	Node<T> next;
+	Node(T data)
+	{
+		this.data = data;
+		this.next = null;
+	}
+}
+
+class LinkedListQueue<T>{
+	private Node<T> front,rear;
+	private int size;
+	
+	public LinkedListQueue() {
+		this.front = null;
+		this.rear = null;
+		this.size = 0;
+	}
+	
+	public boolean isEmpty() {
+		return this.front == null;
+	}
+	
+	public int size() {
+		return size;
+	}
+	
+	public void enqueue(T item) {
+		Node<T> newNode = new Node<>(item);
+	}
+}
+public class Exp1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

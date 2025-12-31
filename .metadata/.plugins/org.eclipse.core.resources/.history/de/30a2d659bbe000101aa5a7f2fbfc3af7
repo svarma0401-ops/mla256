@@ -1,0 +1,31 @@
+
+package com.dsgn;
+
+import java.time.LocalDateTime;
+
+class TimeService {
+    private static TimeService instance; // single instance
+    private final LocalDateTime creationTime;
+
+    private TimeService() {
+        creationTime = LocalDateTime.now();
+    }
+
+    public static TimeService getInstance() {
+        if (instance == null) {
+            instance = new TimeService();
+        }
+        return instance;
+    }
+
+    public LocalDateTime getCreationTime() {
+        return creationTime;
+    }
+}
+
+public class SingletonTimestamp {
+    public static void main(String[] args) {
+        TimeService t1 = TimeService.getInstance();
+        System.out.println("Created at: " + t1.getCreationTime());
+    }
+}

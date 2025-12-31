@@ -1,0 +1,19 @@
+package com.custom.qs;
+
+class ArrayQueue{
+	private int[] arr;
+	private int front,rear,size,capacity;
+	
+	public ArrayQueue(int capacity)
+	{
+		this.capacity = capacity;
+	}
+}
+public class Exp2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

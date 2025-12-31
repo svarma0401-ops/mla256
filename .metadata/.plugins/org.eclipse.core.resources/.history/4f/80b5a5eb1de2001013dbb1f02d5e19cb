@@ -1,0 +1,30 @@
+package com.cls;
+
+import java.util.Stack;
+
+public class Exp2 {
+
+	public static void main(String[] args) {
+	
+		Stack data = new Stack();
+		
+		data.add(100);
+		data.add("JAVA");
+		data.add('a');
+		data.add(1000);
+		data.add(100);
+		data.add(22.222f);
+		data.add(true);
+		data.add("hello");
+		System.out.println(data);
+		
+		System.out.println(data.peek());
+		System.out.println(data.pop());
+		System.out.println(data.peek());
+		System.out.println(data.push("Spring"));
+		System.out.println(data.peek());
+		System.out.println(data);
+		System.out.println(data.search("100"));
+	}
+
+}

@@ -1,0 +1,16 @@
+package com.dtm;
+
+import java.time.LocalDate;
+
+public class Exp1 {
+
+	public static void main(String[] args) {
+		
+		// get the current date and time
+		LocalDate ld = LocalDate.now();
+		
+		System.out.println(ld);
+
+	}
+
+}

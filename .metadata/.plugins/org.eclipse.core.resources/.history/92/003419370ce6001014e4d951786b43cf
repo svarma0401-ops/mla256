@@ -1,0 +1,30 @@
+package com.test;
+
+public class GCExp1 implements AutoCloseable {
+
+	@Override
+	protected void finalize() throws Throwable{
+		
+		try {
+			System.out.println("Object Released(Garbage Collection)");
+		}
+		finally {
+			super.finalize();
+		}
+	}
+	
+	@Override
+	public void close()
+	{
+		System.out.println("Closing Resources");
+	}
+	public static void main(String[] args) {
+		// final finally finalize
+		
+		GCExp1 obj  = new GCExp1();
+		obj = null;
+		Runtime.getRuntime().gc();
+		System.gc();
+	}
+
+}

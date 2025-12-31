@@ -1,0 +1,9 @@
+package com.test;
+
+public class GCExp1 {
+
+	public static void main(String[] args) {
+		// final finally finalize
+	}
+
+}

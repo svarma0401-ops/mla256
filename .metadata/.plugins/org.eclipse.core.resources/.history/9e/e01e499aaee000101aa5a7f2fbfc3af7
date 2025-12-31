@@ -1,0 +1,18 @@
+package com.dtm;
+
+import java.util.Arrays;
+
+final class TestImmutable
+{
+	private final String msg = "Hello Developer";
+	
+	private final List<String> names = Arrays.asList("king");
+}
+public class CustomImmutable {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

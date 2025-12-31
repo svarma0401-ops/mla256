@@ -1,0 +1,91 @@
+package com.custom.qs;
+
+import java.util.NoSuchElementException;
+
+class Node<T>
+{
+	T data;
+	Node<T> next;
+	Node(T data)
+	{
+		this.data = data;
+		this.next = null;
+	}
+}
+
+class LinkedListQueue<T>{
+	private Node<T> front,rear;
+	private int size;
+	
+	public LinkedListQueue() {
+		this.front = null;
+		this.rear = null;
+		this.size = 0;
+	}
+	
+	public boolean isEmpty() {
+		return this.front == null;
+	}
+	
+	public int size() {
+		return size;
+	}
+	
+	public void enqueue(T item) {
+		Node<T> newNode = new Node<>(item);
+		if(isEmpty()) {
+			front = newNode;
+			rear = newNode;
+		}
+		else
+		{
+			rear.next = newNode;
+			rear = newNode;
+		}
+		size++;
+	}
+	
+	public T dequeue()
+	{
+		if(isEmpty()) {
+			System.out.println("The queue is empty");
+			throw(new NoSuchElementException("queue is empty"));
+		}
+		
+		T data = front.data;
+		front = front.next;
+		
+		if(front == null) {
+			rear = null;
+		}
+		size-- ;
+		return data;
+		
+	}
+	
+	public T peek() {
+		if(isEmpty()) {
+			throw(new NoSuchElementException("queue is empty"));
+		}
+		return front.data;
+	}
+}
+public class Exp1 {
+
+	public static void main(String[] args) {
+		
+		LinkedListQueue<Integer> data = new LinkedListQueue<>();
+		data.enqueue(101);
+		data.enqueue(103);
+		data.enqueue(501);
+		data.enqueue(701);
+		data.enqueue(901);
+		
+		System.out.println(data.size());
+		
+		System.out.println(data.dequeue());
+		
+		System.out.println(data.peek());
+	}
+
+}

@@ -1,0 +1,45 @@
+package com.ths;
+
+public class Lifecycle implements Runnable {
+	@Override
+	public void run() {
+		try
+		{
+			Thread.sleep(1000);
+			System.out.println("run()");
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+	public static void main(String[] args) throws Exception{
+		
+		Lifecycle obj = new Lifecycle();
+	//	obj.run();
+		
+		Thread t1 = new Thread(obj);
+		
+		System.out.println("Before Starting thread state : "+t1.getState());
+		System.out.println("Before Starting thread status : "+t1.isAlive());
+		
+		t1.start();
+		
+		System.out.println("After Starting thread state : "+t1.getState());
+		System.out.println("After Starting thread status : "+t1.isAlive());
+		
+		Thread.sleep(500);
+		System.out.println("In sleep thread state : "+t1.getState());
+		System.out.println("In sleep thread status : "+t1.isAlive());
+	
+		Runnable t2 = () -> {
+			System.out.println("run()");
+		};
+		
+		Thread t3 = new Thread(
+				()->System.out.println("run() lambda expression")
+				);
+		t3.start();
+	}
+
+}

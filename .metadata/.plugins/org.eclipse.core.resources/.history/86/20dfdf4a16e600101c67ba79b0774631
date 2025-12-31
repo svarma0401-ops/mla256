@@ -1,0 +1,15 @@
+package com.inhs;
+
+class A
+{
+	public int test()
+}
+
+class B 
+{
+	
+}
+
+public class Exp1 {
+	
+}

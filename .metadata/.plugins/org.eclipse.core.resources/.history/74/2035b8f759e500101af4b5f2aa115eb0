@@ -1,0 +1,22 @@
+package com.ths;
+
+class Item
+{
+	public int value;
+	public boolean valSet;
+	public synchronized void setItem(int input)
+	{
+		if(valSet)
+		{
+			wait();
+		}
+	}
+}
+public class ITCDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

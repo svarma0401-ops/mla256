@@ -1,0 +1,23 @@
+package com.sortings;
+
+public class MergeSort {
+
+	public static void sortElements(int [] arr,int l,int r) {
+		if(l<r)
+		{
+			int m = l +(r-l)/2;
+			sortElements(arr,l,m);
+			sortElements(arr,m+1,r);
+		}
+	}
+	
+	public static void mergeSortedArray(int[] arr,int l,int m,int r) {
+		int n1 = m-l+1;
+		int n2 = r-m;
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,84 @@
+package com.custom.qs;
+
+class ArrayQueue{
+	private int[] arr;
+	private int front, rear, size, capacity;
+	
+	public ArrayQueue(int capacity)
+	{
+		this.capacity = capacity;
+		arr = new int[capacity];
+		front = 0;
+		rear = -1;
+		size = 0;
+	}
+	
+	public boolean isEmpty() 
+	{
+		return size==0;
+	}
+	
+	public boolean isFull() 
+	{
+		return size == capacity;
+	}
+	
+	public int size() 
+	{
+		return size;
+	}
+	
+	public void enqueue(int value) {
+		if(isFull()) {
+			System.out.println("Queue is Full");
+			return;	
+		}
+		
+		rear = (rear+1)%capacity;
+		arr[rear] = value;
+		
+		size++;
+		System.out.println("Enqueued one element : " +value);
+	}
+	
+	public int dequeue() {
+		if(isEmpty()) {
+			System.out.println("Queue is empty");
+			return -1;
+		}
+		
+		int value = arr[front];
+		front = (front+1)%capacity;
+		size--;
+		System.out.println("Dequeued one element : " +value);
+		return value;
+	}
+	
+	public int peek() {
+		if(isEmpty()) {
+			System.out.println("Queue is empty");
+		}
+		
+		return arr[front];
+	}
+}
+public class Exp2 {
+
+	public static void main(String[] args) {
+		
+		ArrayQueue data = new ArrayQueue(5);
+		data.enqueue(100);
+		data.enqueue(200);;
+		data.enqueue(300);
+		data.enqueue(500);
+		data.enqueue(600);
+		
+		System.out.println("Top element : " +data.peek());
+		
+		data.dequeue();
+		data.dequeue();
+		System.out.println("Top element : " +data.peek());
+
+	}
+
+}

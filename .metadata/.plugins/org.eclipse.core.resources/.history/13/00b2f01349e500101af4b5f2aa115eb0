@@ -1,0 +1,20 @@
+package com.ths;
+
+import java.util.concurrent.Executors;
+
+public class TaskScheduleDemo {
+	
+	static class SystemTask implements Runnable
+	{
+		@Override
+		public void run() {
+			System.out.println("Running Background Task...");
+		}
+	}
+	public static void main(String[] args) {
+		
+		ScheduledExcecutorService scheduler = Executors.newScheduledThreadPool(1);
+
+	}
+
+}

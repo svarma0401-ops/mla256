@@ -1,0 +1,27 @@
+package com.fls;
+
+import java.util.Arrays;
+import java.util.List;
+
+public class SerialDemo {
+
+	public static void main(String[] args) {
+		
+		List<PlayersData> data =Arrays.asList(new PlayersData(1,"Kohli","All Rounder"),
+				new PlayersData(2,"Rohit","Hitman"),
+				new PlayersData(3,"SKY","All rounder 360"));
+		
+		String path = "team.txt";
+		
+		try(){
+			
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+				
+
+	}
+
+}

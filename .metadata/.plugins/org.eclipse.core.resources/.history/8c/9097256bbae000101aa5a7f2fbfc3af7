@@ -1,0 +1,39 @@
+package com.dtm;
+
+
+// Immutable class example
+final class ImmutablePerson {
+    private final String name;
+    private final int age;
+
+    // Constructor initializes all fields
+    public ImmutablePerson(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // Only getters (no setters)
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    @Override
+    public String toString() {
+        return "ImmutablePerson{name='" + name + "', age=" + age + "}";
+    }
+}
+
+public class ExpImmutable {
+    public static void main(String[] args) {
+        ImmutablePerson person = new ImmutablePerson("Shubham", 30);
+        System.out.println(person);
+
+        // No way to modify name or age after creation
+        // person.name = "New Name"; // Not allowed
+        // person.age = 40;          // Not allowed
+    }
+}

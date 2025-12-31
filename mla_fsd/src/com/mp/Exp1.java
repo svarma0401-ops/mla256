@@ -1,0 +1,36 @@
+package com.mp;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+
+public class Exp1 {
+
+	public static void main(String[] args) {
+		
+		Map data = new HashMap<>();
+		
+		data.put("java", "spring");
+		data.put(101,"php");
+		data.put('w',99);
+		data.put(84,99.33f);
+		data.put(false,"yes");
+		data.put("java","hibernate");
+		data.put(101,"rohit");
+		
+		System.out.println(data);
+		System.out.println(data.size());
+		System.out.println(data.get('w'));
+		
+		Iterator<Map.Entry> itr = data.entrySet().iterator();
+		
+		while(itr.hasNext()) {
+			Entry et = itr.next();
+			System.out.println(et.getKey()+" <=> "+et.getValue());
+		}
+		
+		data.keySet().forEach(x -> System.out.println(x+ " <- : -> "+data.get(x)));
+	}
+
+}

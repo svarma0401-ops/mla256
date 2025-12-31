@@ -1,0 +1,10 @@
+package com.fls;
+
+public class ByteWrite {
+
+	public static void main(String[] args) {
+
+		File file = new File("bytetest.txt");
+	}
+
+}

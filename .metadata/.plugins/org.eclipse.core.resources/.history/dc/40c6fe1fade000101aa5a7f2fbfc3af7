@@ -1,0 +1,46 @@
+package com.dtm;
+
+import java.util.Arrays;
+import java.util.List;
+
+public class Exp3 {
+	
+	private static double add(List<? extends Number> list) {
+		double a = 0 ; 
+		
+		for(Number n : list) {
+			
+			a = n.doubleValue();
+			a += a;
+		}
+		return a;
+	}
+	
+	//lower bounded
+	public static void lowerBounded(List<? super Integer> list) {
+		System.out.println(list);
+	}
+	
+	//unbounded wildcards
+	public static void unboundedData(List<?> list) {
+		System.out.println(list);
+	}
+	public static void main(String[] args) {
+		
+		// upper bounded
+		List<Integer> list1 = Arrays.asList(12,3,4,5);
+		add(list1);
+		System.out.println(list1);
+		List<Double> list2 = Arrays.asList(12.12,3.34,4.43,5.78);
+		add(list2);
+		System.out.println(list2);
+		
+		lowerBounded(list1);
+		unboundedData(list2);
+		
+		List<String> names = Arrays.asList("java","python","spring");
+		unboundedData(names);
+		
+		List<Customer> lstc = Arrays.asList();
+	}
+}

@@ -1,0 +1,105 @@
+package com.cls;
+
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.Objects;
+import java.util.TreeSet;
+
+class Employee1 implements Comparable<Employee1>
+{
+	private int id;
+	private String name;
+	private int salary;
+	
+	public Employee1(int id, String name,int salary)
+	{
+		this.id = id;
+		this.name = name;
+		this.salary=salary;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getSalary() {
+		return salary;
+	}
+
+	public void setSalary(int salary) {
+		this.salary = salary;
+	}
+	
+	@Override
+	public String toString() {
+		return "Employee [id=" +id + ", name=" +name+ ",salary= " +salary+ "]";
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id, name, salary);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Employee1 other = (Employee1) obj;
+		return id == other.id && Objects.equals(name, other.name) && salary == other.salary;
+	}
+	
+	@Override
+	public int compareTo(Employee1 o) {
+		return this.id = o.id;
+	}
+}
+
+class NameSorting implements Comparator<Employee1>{
+	
+	@Override
+	public int compare(Employee1 o1, Employee1 o2) {
+		return o1.getName().compareTo(o2.getName());
+	}
+}
+
+
+public class Exp7 {
+
+	public static void main(String[] args) {
+		
+	TreeSet<Employee1> data = new TreeSet<>(new NameSorting());
+	
+	data.add(new Employee1(501,"rohit",235));
+	data.add(new Employee1(502,"dhoni",345));
+	data.add(new Employee1(509,"pant",333));
+	data.add(new Employee1(504,"rahul",400));
+	data.add(new Employee1(505,"virat",455));
+	data.add(new Employee1(505,"virat",455));
+	data.forEach(System.out::println);
+	
+	//String str1 = "java";
+	//String str2 = new String("java");
+	
+	//System.out.println(str1 == str2 );
+	//System.out.println(str1.equals(str2));
+	
+	System.out.println(data.size());
+	}
+
+}

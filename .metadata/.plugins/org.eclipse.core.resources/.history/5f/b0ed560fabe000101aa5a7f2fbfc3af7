@@ -1,0 +1,15 @@
+package com.dtm;
+
+public class Exp3 {
+	
+	private static double add(List<? extends Number> list) {
+		double a = 0 ; 
+		
+		for(Number n : list) {
+			
+			a = n.doubleValue()
+			a += a;
+		}
+		return a;
+	}
+}

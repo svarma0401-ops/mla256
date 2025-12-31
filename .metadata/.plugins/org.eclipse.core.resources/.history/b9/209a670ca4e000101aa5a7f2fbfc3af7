@@ -1,0 +1,19 @@
+package com.dtm;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
+public class Exp1 {
+
+	public static void main(String[] args) {
+		
+		// get the current date 
+		LocalDate ld = LocalDate.now();
+		
+		LocalDateTime ldt =  LocalDateTime.now();
+		System.out.println(ldt);
+		System.out.println(ld);
+
+	}
+
+}

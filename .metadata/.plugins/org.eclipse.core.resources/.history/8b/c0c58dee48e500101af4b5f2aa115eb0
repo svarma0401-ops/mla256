@@ -1,0 +1,18 @@
+package com.ths;
+
+
+public class TaskScheduleDemo {
+	
+	static class SystemTask implements Runnable
+	{
+		@Override
+		public void run() {
+			System.out.println("Running Background Task...");
+		}
+	}
+	public static void main(String[] args) {
+		
+
+	}
+
+}

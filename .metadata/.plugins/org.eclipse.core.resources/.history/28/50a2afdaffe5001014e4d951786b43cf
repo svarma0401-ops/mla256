@@ -1,0 +1,42 @@
+package com.test;
+
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+public class TestCalculator {
+	Calculator obj;
+	
+	//@BeforeClass Junit-4 
+	@BeforeAll
+	public static void beforeAll()
+	{
+		System.out.println("Before all test cases");
+	}
+	
+	//@AfterClass Junit-4
+	@AfterAll
+	public static void afterAll() {
+		System.out.println("After all test cases");
+	}
+	
+	//@Before Junit-4
+	@BeforeEach
+	public void beforeEach()
+	{
+		System.out.println("Before each test method");
+	}
+	
+	//@After Junit-4
+	@AfterEach
+	public void afteEach() {
+		System.out.println("After each test method");
+	}
+	
+	@Test
+	public void testAdd() {
+		System.out.println("Test add method");
+	}
+}

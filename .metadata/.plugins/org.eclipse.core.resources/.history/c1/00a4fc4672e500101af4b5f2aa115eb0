@@ -1,0 +1,101 @@
+package TravelApp.travel;
+
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.Statement;
+
+public class App {
+
+    public static void main(String[] args) throws Exception {
+
+        String url = "jdbc:mysql://localhost:3306/travel_db";
+        String user = "root";
+        String pass = "root@39";
+
+    
+        Class.forName("com.mysql.cj.jdbc.Driver");
+
+        Connection con = DriverManager.getConnection(url, user, pass);
+
+      
+
+        Statement stmt = con.createStatement();
+
+        String userTable = "CREATE TABLE users (id INT PRIMARY KEY,name VARCHAR(50), email VARCHAR(50))";
+                           
+
+        String travelTable = "CREATE TABLE  travel_info ( tid INT PRIMARY KEY,user_id INT, source VARCHAR(50),destination VARCHAR(50))";
+
+        stmt.execute(userTable);
+        stmt.execute(travelTable);
+
+
+        String sql1 = "INSERT INTO users VALUES (?,?,?)";
+        PreparedStatement pst1 = con.prepareStatement(sql1);
+
+        pst1.setInt(1, 1);
+        pst1.setString(2, "Rohit");
+        pst1.setString(3, "rohit@gmail.com");
+
+        pst1.setInt(1, 2);
+        pst1.setString(2, "Virat");
+        pst1.setString(3, "virat@gmail.com");
+        // ================= UPDATE USER =================
+
+        String sql2 = "UPDATE users SET email=? WHERE id=?";
+        PreparedStatement pst2 = con.prepareStatement(sql2);
+
+        pst2.setString(1, "rahul_new@gmail.com");
+        pst2.setInt(2, 1);
+
+        // ================= INSERT TRAVEL =================
+
+        String sql3 = "INSERT INTO travel_info VALUES (?,?,?,?)";
+        PreparedStatement pst3 = con.prepareStatement(sql3);
+
+        pst3.setInt(1, 101);
+        pst3.setInt(2, 1);
+        pst3.setString(3, "Delhi");
+        pst3.setString(4, "Mumbai");
+
+        // ================= SELECT USERS =================
+
+        String sql4 = "SELECT * FROM users";
+        PreparedStatement pst4 = con.prepareStatement(sql4);
+
+        // ================= BATCH EXECUTION =================
+
+        pst1.addBatch();
+        pst2.addBatch();
+        pst3.addBatch();
+
+        pst1.executeBatch();
+        pst2.executeBatch();
+        pst3.executeBatch();
+
+        // ================= DISPLAY DATA =================
+
+        ResultSet rs = pst4.executeQuery();
+        while (rs.next()) {
+            System.out.println(
+                    "ID: " + rs.getInt(1) +
+                    ", Name: " + rs.getString(2) +
+                    ", Email: " + rs.getString(3)
+            );
+        }
+
+        // ================= METADATA =================
+
+        ResultSetMetaData rsmd = rs.getMetaData();
+        System.out.println("Column Count: " + rsmd.getColumnCount());
+        System.out.println("Column Name 1: " + rsmd.getColumnName(1));
+        System.out.println("Column Type 1: " + rsmd.getColumnClassName(1));
+
+        // Close Connection
+        con.close();
+    }
+}

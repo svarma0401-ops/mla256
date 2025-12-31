@@ -1,0 +1,50 @@
+package com.cls;
+
+class Node<T>
+{
+	T data;
+	
+	Node<T> next;
+	//Node<T> prev;
+	
+	Node( T data){
+		this.data = data;
+		this.next = null;
+	}
+} 
+
+class LinkedListStack<T>
+{
+	private Node<T> top;
+	private int size;
+	
+	public LinkedListStack()
+	{
+		this.top = null;
+		this.size = 0;
+	}
+	
+	public boolean isEmpty()
+	{
+		return top == null;
+	}
+	
+	public int size()
+	{
+		return size;
+	}
+	
+	public void push(T element) {
+		Node<T> nextNode = new Node<>( element);
+		newNode.next = top;
+		top = newNode;
+	}
+}
+public class Exp10 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
