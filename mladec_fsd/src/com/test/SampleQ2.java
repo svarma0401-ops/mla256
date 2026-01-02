@@ -13,6 +13,6 @@ public class SampleQ2 {
             return "Hello, " + msg + "Good Evening";
         };
         
-        System.out.println(obj.greetUser("Uchit Seth, "));
+        System.out.println(obj.greetUser("Uchit , "));
     }
 }
