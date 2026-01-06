@@ -1,43 +1,69 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
 <%@ page import="com.test.*" %>
-<%
-    int id = Integer.parseInt(request.getParameter("id"));
-    EmployeeDao dao = new EmployeeDaoImpl();
-    Employee emp = null;
+<!DOCTYPE html>
+<html>
+<body>
 
-    for (Employee e : dao.getAllEmployee()) {
-        if (e.getId() == id) {
-            emp = e;
-            break;
+<h2 align="center">Update Employee</h2>
+
+<%
+    String msg = request.getParameter("msg");
+    if ("updated".equals(msg)) {
+%>
+<p align="center" style="color:green;">Employee updated successfully!</p>
+<% } %>
+
+<!-- STEP 1: SEARCH BY ID -->
+<form method="get" action="editEmployee.jsp" align="center">
+    <table>
+        <tr>
+            <td>Employee ID</td>
+            <td><input type="text" name="id" required></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center"><input type="submit" value="Search"></td>
+        </tr>
+    </table>
+</form>
+
+<br>
+
+<%
+    Employee emp = null;
+    String idParam = request.getParameter("id");
+    if (idParam != null && !idParam.isEmpty()) {
+        int id = Integer.parseInt(idParam);
+        EmployeeDao dao = new EmployeeDaoImpl();
+        for (Employee e : dao.getAllEmployee()) {
+            if (e.getId() == id) {
+                emp = e;
+                break;
+            }
+        }
+        if (emp == null) {
+%>
+<p align="center" style="color:red;">Employee not found!</p>
+<%
         }
     }
 %>
 
-<html>
-<body>
-<h2>Edit Employee</h2>
-
-<form action="employee" method="post">
+<% if (emp != null) { %>
+<!-- STEP 2: SHOW UPDATE FORM -->
+<form action="employee" method="post" align="center">
     <input type="hidden" name="action" value="update">
-
-    ID:
-    <input type="text" name="id" value="<%= emp.getId() %>" readonly><br><br>
-
-    Name:
-    <input type="text" name="name" value="<%= emp.getName() %>"><br><br>
-
-    Salary:
-    <input type="text" name="salary" value="<%= emp.getSalary() %>"><br><br>
-
-    Department:
-    <input type="text" name="department" value="<%= emp.getDepartment() %>"><br><br>
-
-    <input type="submit" value="Update Employee">
+    <table>
+        <tr><td>Employee ID</td><td><input type="text" name="id" value="<%= emp.getId() %>" readonly></td></tr>
+        <tr><td>Name</td><td><input type="text" name="name" value="<%= emp.getName() %>"></td></tr>
+        <tr><td>Salary</td><td><input type="text" name="salary" value="<%= emp.getSalary() %>"></td></tr>
+        <tr><td>Department</td><td><input type="text" name="department" value="<%= emp.getDepartment() %>"></td></tr>
+        <tr><td colspan="2" align="center"><input type="submit" value="Update Employee"></td></tr>
+    </table>
 </form>
+<% } %>
 
-<br>
-<a href="viewEmployees.jsp">Back to Employee List</a>
+<div align="center">
+    <br><a href="index.jsp">Back to Home</a>
+</div>
+
 </body>
 </html>

@@ -1,35 +1,57 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page import="com.test.*" %>
+<%@ page import="java.util.*" %>
 <!DOCTYPE html>
-<%@ page import="java.util.*,com.test.*" %>
 <html>
 <body>
-<h2>Employee List</h2>
 
-<table border="1">
-<tr>
-<th>ID</th><th>Name</th><th>Salary</th><th>Department</th><th>Action</th>
-</tr>
+<h2 align="center">Employee List</h2>
 
 <%
     EmployeeDao dao = new EmployeeDaoImpl();
-    for(Employee e : dao.getAllEmployee()) {
+    List<Employee> employees = dao.getAllEmployee();
+
+    String msg = request.getParameter("msg");
+    if (msg != null) {
+        if ("deleted".equals(msg)) {
 %>
-<tr>
-<td><%= e.getId() %></td>
-<td><%= e.getName() %></td>
-<td><%= e.getSalary() %></td>
-<td><%= e.getDepartment() %></td>
-<td>
-<form action="employee" method="post">
-    <input type="hidden" name="action" value="delete">
-    <input type="hidden" name="id" value="<%= e.getId() %>">
-    <input type="submit" value="Delete">
-</form>
-</td>
-</tr>
+<p align="center" style="color:green;">Employee deleted successfully</p>
+<%
+        } else if ("updated".equals(msg)) {
+%>
+<p align="center" style="color:green;">Employee updated successfully</p>
+<%
+        } else if ("added".equals(msg)) {
+%>
+<p align="center" style="color:green;">Employee added successfully</p>
+<%
+        }
+    }
+%>
+
+<table border="1" cellpadding="5" cellspacing="0" align="center">
+    <tr>
+        <th>Employee ID</th>
+        <th>Name</th>
+        <th>Salary</th>
+        <th>Department</th>
+    </tr>
+
+<% for (Employee e : employees) { %>
+    <tr>
+        <td><%= e.getId() %></td>
+        <td><%= e.getName() %></td>
+        <td><%= e.getSalary() %></td>
+        <td><%= e.getDepartment() %></td>
+    </tr>
 <% } %>
 
 </table>
+
+<br>
+<div align="center">
+    <a href="index.jsp">Back to Home</a> | 
+    <a href="addEmployee.jsp">Add New Employee</a>
+</div>
+
 </body>
 </html>
