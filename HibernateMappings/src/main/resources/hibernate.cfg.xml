@@ -16,7 +16,8 @@
 <!--         <mapping resource="com/test/Book.hbm.xml" />  -->
 <!--   		<mapping class="com.test.Book"/>  -->
 		<mapping class = "com.test.Address"/>
-		<mapping class = "com.test.Employee"/>
+		<mapping class = "com.test.Student"/>
+		
 	<!-- 	<mapping class = "com.test.TennisPlayer" /> -->
 	</session-factory>
 </hibernate-configuration>

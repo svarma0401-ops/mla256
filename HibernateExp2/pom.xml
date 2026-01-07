@@ -43,5 +43,10 @@
             <version>2.17.1</version>
         </dependency>
 
+        <dependency>
+        	<groupId>com.test</groupId>
+        	<artifactId>HibernateMappings</artifactId>
+        	<version>0.0.1-SNAPSHOT</version>
+        </dependency>
   </dependencies>
 </project>

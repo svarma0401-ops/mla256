@@ -1,11 +1,11 @@
 package com.test;
-
+ 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-
+ 
 @Entity
 @Table(name = "address")
 public class Address {
@@ -41,6 +41,10 @@ public class Address {
 		}
 		public void setCountry(String country) {
 			this.country = country;
+		}
+		@Override
+		public String toString() {
+			return "Address [id=" + id + ", city=" + city + ", state=" + state + ", country=" + country + "]";
 		}
 		
 		

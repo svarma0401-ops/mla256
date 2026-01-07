@@ -1,4 +1,4 @@
-package com.dtm;
+package com.test;
 
 
 public final class PracImmutable {
