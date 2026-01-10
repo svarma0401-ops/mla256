@@ -28,6 +28,7 @@ public class Triangle implements InitializingBean, DisposableBean{
 	 public void afterPropertiesSet() throws Exception{
 		 System.out.println("InitializingBean init() method is called");
 	 }
+	 
 	 @Override
 	 public void destroy() throws Exception {
 		System.out.println("DisposableBean destroy() is called");
