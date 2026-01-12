@@ -1,0 +1,30 @@
+package com.test.main;
+
+import java.util.List;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.test.Book;
+import com.test.config.DBConfig;
+import com.test.dao.BookDao;
+
+public class BookDemp {
+
+	public static void main(String[] args) {
+		
+		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(DBConfig.class);
+
+		BookDao bdao = ctx.getBean(BookDao.class);
+		
+		Book b1 = new Book();
+		b1.setB_name("Java Notes");
+		b1.setB_price(300);
+		
+		bdao.createBook(b1);
+		
+		List<Book> listBooks = bdao.getAllBooks();
+		listBooks.forEach(System.out::println);
+		
+	}
+
+}
