@@ -5,11 +5,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.test</groupId>
-  <artifactId>JSTLExp1</artifactId>
+  <artifactId>SpringMVCExp1</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
 
-  <name>JSTLExp1 Maven Webapp</name>
+  <name>SpringMVCExp1 Maven Webapp</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -22,6 +22,18 @@
   <dependencies>
   
   	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-webmvc</artifactId>
+  		<version>7.0.2</version>
+  	</dependency>
+  	
+  	<dependency>
+  		<groupId>jakarta.servlet</groupId>
+  		<artifactId>jakarta.servlet-api</artifactId>
+  		<version>6.1.0</version>
+  	</dependency>
+  	
+  	<dependency>
 	    <groupId>jakarta.servlet.jsp.jstl</groupId>
 	    <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
 	    <version>3.0.2</version>
@@ -32,7 +44,7 @@
 	    <artifactId>jakarta.servlet.jsp.jstl</artifactId>
 	    <version>3.0.1</version>
 	</dependency>
-	
+  
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -42,7 +54,7 @@
   </dependencies>
 
   <build>
-    <finalName>JSTLExp1</finalName>
+    <finalName>SpringMVCExp1</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <plugin>
