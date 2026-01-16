@@ -118,4 +118,29 @@ public class StudentController {
 			return new ResponseEntity<>(obj,HttpStatus.OK);
 		}
 	}
+	
+	@GetMapping("/list/{name}")
+	@Operation(method="getStudentByName", description = "get students data from DB using name")
+	public ResponseEntity<Optional<Student>> getStudentByName(@PathVariable String name) {
+		Optional<Student> obj =  service.getStudentByName(name);
+		if (name == null) {
+			return new ResponseEntity<>(obj, HttpStatus.NOT_FOUND);
+		} else {
+			return new ResponseEntity<>(obj, HttpStatus.OK);
+		}
+	}
+	
+	
+	
+	@GetMapping("/list/{deparement}")
+	@Operation(method="getStudentByName", description = "get students data from DB using department")
+	public ResponseEntity<List<Student>> getStudentByDepartment(@PathVariable String department) {
+		List<Student> obj =  service.getStudentsByDepartment(department);
+		if (obj.isEmpty()) {
+			return new ResponseEntity<>(obj, HttpStatus.NOT_FOUND);
+		} else {
+			return new ResponseEntity<>(obj, HttpStatus.OK);
+		}
+	}
+ 
 }

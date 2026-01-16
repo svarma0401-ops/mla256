@@ -46,4 +46,14 @@ public class StudentServiceImpl implements StudentService {
 		return dao.getAllStudents();
 	}
 
+	@Override
+	public Optional<Student> getStudentByName(String name) {
+		return dao.getStudentByName(name);
+	}
+
+	@Override
+	public List<Student> getStudentsByDepartment(String department){
+		return dao.getStudentsByDepartment(department);
+	}
+
 }

@@ -2,10 +2,8 @@ package com.test.dao.impl;
 
 import java.util.List;
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
 import com.test.dao.StudentDao;
 import com.test.entity.Student;
 import com.test.repository.StudentRepository;
@@ -42,6 +40,17 @@ public class StudentDaoImpl implements StudentDao{
 	public List<Student> getAllStudents() {
 		
 		return repository.findAll();
+	}
+
+	@Override
+	public Optional<Student> getStudentByName(String name) {
+		return repository.getStudentByName(name);
+	}
+
+	@Override
+	public List<Student> getStudentsByDepartment(String department) {
+
+		return repository.getStudentByDepartment(department);
 	}
 
 	
