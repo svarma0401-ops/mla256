@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: SpringBootCloudGatewayService1
+server:
+  port: 8889
