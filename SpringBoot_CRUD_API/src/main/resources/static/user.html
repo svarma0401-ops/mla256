@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Dashboard</title>
+</head>
+<body>
+    <h2>User Dashboard</h2>
+
+    <button onclick="loadEmployees()">View Employees</button>
+    <br><br>
+    <table border="1" id="empTable"></table>
+
+    <br>
+    <a href="/logout">Logout</a>
+
+    <script>
+        function loadEmployees() {
+            fetch("/employee")
+            .then(res => res.json())
+            .then(data => {
+                let table = "<tr><th>ID</th><th>Name</th><th>Dept</th><th>Salary</th></tr>";
+                data.forEach(emp => {
+                    table += `<tr>
+                        <td>${emp.id}</td>
+                        <td>${emp.name}</td>
+                        <td>${emp.department}</td>
+                        <td>${emp.salary}</td>
+                    </tr>`;
+                });
+                document.getElementById("empTable").innerHTML = table;
+            });
+        }
+    </script>
+</body>
+</html>
