@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <h2>Admin Dashboard</h2>
+
+    <h3>Add Employee</h3>
+    <label>Name:</label> <input id="name"><br>
+    <label>Dept:</label> <input id="dept"><br>
+    <label>Salary:</label> <input id="salary"><br>
+    <button onclick="addEmployee()">Add</button>
+
+    <hr>
+
+    <h3>Employees List</h3>
+    <table border="1" id="empTable"></table>
+
+    <br>
+    <a href="/logout">Logout</a>
+
+    <script>
+        function loadEmployees() {
+            fetch("/employee")
+            .then(res => res.json())
+            .then(data => {
+                let table = "<tr><th>ID</th><th>Name</th><th>Dept</th><th>Salary</th><th>Actions</th></tr>";
+                data.forEach(emp => {
+                    table += `<tr>
+                        <td>${emp.id}</td>
+                        <td><input value="${emp.name}" id="name-${emp.id}"></td>
+                        <td><input value="${emp.department}" id="dept-${emp.id}"></td>
+                        <td><input value="${emp.salary}" id="salary-${emp.id}"></td>
+                        <td>
+                            <button onclick="updateEmployee(${emp.id})">Update</button>
+                            <button onclick="deleteEmployee(${emp.id})">Delete</button>
+                        </td>
+                    </tr>`;
+                });
+                document.getElementById("empTable").innerHTML = table;
+            });
+        }
+
+        function addEmployee() {
+            let name = document.getElementById("name").value;
+            let dept = document.getElementById("dept").value;
+            let salary = document.getElementById("salary").value;
+
+            fetch("/employee", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({name, department: dept, salary})
+            }).then(() => loadEmployees());
+        }
+
+        function updateEmployee(id) {
+            let name = document.getElementById(`name-${id}`).value;
+            let dept = document.getElementById(`dept-${id}`).value;
+            let salary = document.getElementById(`salary-${id}`).value;
+
+            fetch("/employee/" + id, {
+                method: "PUT",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({name, department: dept, salary})
+            }).then(() => loadEmployees());
+        }
+
+        function deleteEmployee(id) {
+            fetch("/employee/" + id, {method: "DELETE"})
+            .then(() => loadEmployees());
+        }
+
+        // Load employees on page load
+        loadEmployees();
+    </script>
+</body>
+</html>
