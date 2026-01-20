@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up</title>
+
+<style>
+    /* ===== Base ===== */
+    body {
+        margin: 0;
+        font-family: "Segoe UI", Arial, sans-serif;
+        background-color: #f1f5f9;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        color: #333;
+    }
+
+    /* ===== Header ===== */
+    header {
+        background: linear-gradient(90deg, #1e3a8a, #2563eb);
+        color: white;
+        padding: 25px;
+        text-align: center;
+    }
+
+    /* ===== Navigation ===== */
+    .nav {
+        background-color: white;
+        padding: 12px 20px;
+        text-align: right;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .nav a {
+        display: inline-block;
+        padding: 8px 16px;
+        margin-left: 10px;
+        border-radius: 6px;
+        text-decoration: none;
+        color: #1e3a8a;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+
+    .nav a:hover {
+        background-color: #2563eb;
+        color: white;
+    }
+
+    /* ===== Content ===== */
+    .content {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* ===== Register Card ===== */
+    .register-box {
+        background-color: white;
+        width: 380px;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .register-box h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #1e3a8a;
+    }
+
+    label {
+        display: block;
+        margin-top: 12px;
+        font-weight: 600;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-top: 6px;
+        border-radius: 6px;
+        border: 1px solid #cbd5e1;
+        box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+        margin-top: 20px;
+        padding: 12px;
+        background-color: #2563eb;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #1e3a8a;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+        background-color: #1e293b;
+        color: white;
+        text-align: center;
+        padding: 14px;
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Custom Website</h1>
+    <h3>MLA CODERS</h3>
+</header>
+
+<div class="nav">
+    <a href="home.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="services.html">Services</a>
+    <a href="login.html">SignIn</a>
+    <a href="register.html">SignUp</a>
+</div>
+
+<div class="content">
+    <div class="register-box">
+        <h2>Create Account</h2>
+
+        <form action="#" method="post" aria-label="Registration form">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <input type="submit" value="Register">
+        </form>
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 MLA CODERS | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>

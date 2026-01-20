@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign In | MLA CODERS</title>
+
+<style>
+    /* ===== Base ===== */
+    body {
+        margin: 0;
+        font-family: "Segoe UI", Arial, sans-serif;
+        background-color: #f1f5f9;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        color: #333;
+    }
+
+    /* ===== Header ===== */
+    header {
+        background: linear-gradient(90deg, #1e3a8a, #2563eb);
+        color: white;
+        padding: 25px;
+        text-align: center;
+    }
+
+    /* ===== Navigation ===== */
+    .nav {
+        background-color: white;
+        padding: 12px 20px;
+        text-align: right;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .nav a {
+        display: inline-block;
+        padding: 8px 16px;
+        margin-left: 10px;
+        border-radius: 6px;
+        text-decoration: none;
+        color: #1e3a8a;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+
+    .nav a:hover {
+        background-color: #2563eb;
+        color: white;
+    }
+
+    /* ===== Login Section ===== */
+    .content {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 20px;
+    }
+
+    .login-card {
+        background-color: white;
+        width: 380px;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+
+    .login-card h1 {
+        text-align: center;
+        color: #1e3a8a;
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: 600;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        width: 100%;
+        padding: 10px 12px;
+        margin-bottom: 15px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        font-size: 14px;
+    }
+
+    input:focus {
+        outline: none;
+        border-color: #2563eb;
+        box-shadow: 0 0 6px rgba(37, 99, 235, 0.3);
+    }
+
+    .btn {
+        width: 100%;
+        padding: 12px;
+        background-color: #2563eb;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 15px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .btn:hover {
+        background-color: #1e3a8a;
+    }
+
+    .extra {
+        text-align: center;
+        margin-top: 15px;
+        font-size: 14px;
+    }
+
+    .extra a {
+        color: #2563eb;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .extra a:hover {
+        text-decoration: underline;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+        background-color: #1e293b;
+        color: white;
+        text-align: center;
+        padding: 14px;
+    }
+</style>
+
+</head>
+<body>
+
+<header>
+    <h1>Custom Website</h1>
+    <h3>MLA CODERS</h3>
+</header>
+
+<div class="nav">
+    <a href="home.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="services.html">Services</a>
+    <a href="login.html">SignIn</a>
+    <a href="register.html">SignUp</a>
+</div>
+
+<div class="content">
+
+    <div class="login-card">
+        <h1>Sign In</h1>
+
+        <form action="#" method="post">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit" class="btn">Login</button>
+        </form>
+
+        <div class="extra">
+            Don’t have an account?
+            <a href="register.html">Sign Up</a>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 MLA CODERS | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
