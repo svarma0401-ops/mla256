@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Tables</title>
+</head>
+<style >
+    body{
+        font: colibri;
+        font-size: 20px;
+        background-color: rgb(240, 240, 240);
+        margin: 0;
+        padding: 20px;
+        
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        background-color: rgb(112, 240, 119);
+        
+    }
+
+    th, td {
+        border: 3px solid rgb(13, 9, 240);
+        padding: 0.23em;
+        text-align: center;
+
+    }
+
+    tbody tr:nth-child(odd) {
+        background:rgb(241, 90, 90);
+    }
+    td:hover {
+        background-color: rgb(255, 0, 200);
+        
+    }
+
+    th {
+        background-color: rgb(0, 0, 0);
+        color: white;
+    }
+    
+</style>
+<body>
+    <table class="zebra">
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Company</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Rohit</td>
+                <td>rohit@example.com</td>
+                <td>Mumbai Indians</td>
+                <td>50000</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Virat</td>
+                <td>virat@example.com</td>
+                <td>Royal Challengers Bangalore</td>
+                <td>60000</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>MS Dhoni</td>
+                <td>msdhoni@example.com</td>    
+                <td>Chennai Super Kings</td>
+                <td>70000</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Sachin Tendulkar</td>
+                <td>sachin.tendulkar@example.com</td>
+                <td>Mumbai Indians</td>
+                <td>80000</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Rishabh Pant</td>
+                <td>rishabh.pant@example.com</td>
+                <td>Delhi Capitals</td>
+                <td>90000</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Hardik Pandya</td>
+                <td>hardik.pandya@example.com</td>
+                <td>Gujarat Titans</td>
+                <td>100000</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Jasprit Bumrah</td>
+                <td>jasprit.bumrah@example.com</td> 
+                <td>Mumbai Indians</td>
+                <td>110000</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Kane Williamson</td>
+                <td>kane.williamson@example.com</td>
+                <td>Sunrisers Hyderabad</td>
+                <td>120000</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Ben Stokes</td>
+                <td>ben.stokes@example.com</td> 
+                <td>Rajasthan Royals</td>
+                <td>130000</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>David Warner</td>
+                <td>david.warner@example.com</td>
+                <td>Sunrisers Hyderabad</td>
+                <td>140000</td>
+            </tr>
+        </tbody>
+    </table>
+    <canvas id="myCanvas" width="400" height="200" style="border:1px solid #000; display:block; margin:16px 0;"></canvas>
+    <script>
+        const canvas = document.getElementById('myCanvas');
+        if (canvas && canvas.getContext) {
+            const ctx = canvas.getContext('2d');
+            ctx.fillStyle = 'red';
+            ctx.fillRect(20, 20, 200, 100); 
+            
+        }
+    </script>
+
+    <figure>
+        <img src="https://www.w3schools.com/html/img_chania.jpg" alt="Chania">
+        <figcaption> A view of Chania, Greece.</figcaption>
+    </figure>
+</body>
+</html>
