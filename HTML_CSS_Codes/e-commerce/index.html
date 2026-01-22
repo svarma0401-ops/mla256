@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLA Shop</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            
+        }
+
+        header {
+            background: linear-gradient(90deg, #09634f, #0fa67a);
+            padding: 16px 32px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar h1 {
+            color: #fff;
+            font-size: 28px;
+        }
+
+        .navbar p {
+            color: #e0f2ec;
+            font-size: 14px;
+        }
+
+        nav a {
+            color: #ffffff;
+            margin-left: 16px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffdd57;
+        }
+
+        .hero {
+            background: #ffffff;
+            padding: 50px 32px;
+            text-align: center;
+        }
+
+        .hero h2 {
+            color: #09634f;
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .hero a {
+            background: #09634f;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: transform 0.3s;
+        }
+
+        .hero a:hover {
+            transform: scale(1.1);
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f4f6f6;
+
+        }
+
+        #products {
+            padding: 40px 32px;
+        }
+
+        #products h2 {
+            text-align: center;
+            color: #09634f;
+            margin-bottom: 30px;
+            font-size: 32px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 40px;
+            box-sizing: border-box;
+            padding: 0 20px;
+}
+        @media (min-width: 768px) {
+            .product-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        figure {
+            background: white;
+            padding: 12px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            width: fit-content;
+            margin: auto;
+
+        }
+
+
+        figure:hover {
+            transform: translateY(-10px);
+        }
+
+        figure img {
+            width: 500px;
+            height: 280px;              
+            object-fit: contain;
+            background-color: white;
+            border-radius: 10px;
+            padding: 10px;
+            transition: transform 0.3s ease;
+            
+        }
+
+
+figure:hover img {
+    transform: scale(1.05);
+}
+
+
+        figcaption {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        figcaption span {
+            color: #666;
+        }
+
+       
+        footer {
+            background: #09634f;
+            color: white;
+            text-align: center;
+            padding: 16px;
+        }
+
+        footer p {
+            font-size: 14px;
+        }
+
+    figure {
+    position: relative;
+}
+
+
+figure img::after {
+    content: "Image unavailable";
+    color: #999;
+}
+
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="navbar">
+        <div>
+            <h1>MLA Shop</h1>
+            <p>Quality products for everyday life</p>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index.html">Products</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <h2>Welcome to MLA Shop</h2>
+    <p>Discover hand-picked products with great quality and value.</p>
+    <a href="#products">Shop Now</a>
+</section>
+
+<main>
+    <section id="products">
+    <h2>Featured Products</h2>
+
+    <div class="product-grid">
+
+        <figure>
+            <img src="https://th.bing.com/th?id=OPAC.gsUS%2bFbipYvorg474C474&w=220&h=210&c=17&o=5&pid=21.1" alt="Headphones">
+            <figcaption>
+                <strong>Classic Headphones</strong><br>
+                <span>₹4,000</span>
+            </figcaption>
+        </figure>
+
+        <figure>
+            <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/rucksack/g/7/i/rucksack-backpack-70-litre-trekking-bags-for-men-women-travel-original-imah92yqqzzh2kt9.jpeg?q=70" alt="Backpack">
+            <figcaption>
+                <strong>Travel Backpack</strong><br>
+                <span>₹5,500</span>
+            </figcaption>
+        </figure>
+
+        <figure>
+            <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/smartwatch/h/4/2/-original-imah8ey99e3cysay.jpeg?q=70" alt="Smart Watch">
+            <figcaption>
+                <strong>Smart Watch</strong><br>
+                <span>₹10,500</span>
+            </figcaption>
+        </figure>
+
+        <figure>
+            <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/speaker/h/h/t/-original-imahfjfyq65fqfvq.jpeg?q=70" alt="Speaker">
+            <figcaption>
+                <strong>Wireless Speaker</strong><br>
+                <span>₹3,200</span>
+            </figcaption>
+        </figure>
+
+        <figure>
+            <img src="https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/z/m/3/13s-5g-cph2723-oneplus-original-imahctqtzhtfzbhf.jpeg?q=70" alt="Mug">
+            <figcaption>
+                <strong>Smart phones</strong><br>
+                <span>₹30,000</span>
+            </figcaption>
+        </figure>
+
+        <figure>
+            <img src="https://rukminim2.flixcart.com/image/312/312/xif0q/computer/4/8/p/-original-imahjy8wu38kydfn.jpeg?q=70" alt="Desk Lamp">
+            <figcaption>
+                <strong>Laptops</strong><br>
+                <span>₹68,000</span>
+            </figcaption>
+        </figure>
+
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <p>© 2026 MLA Shop | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
