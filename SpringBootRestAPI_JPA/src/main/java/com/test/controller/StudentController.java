@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,6 +26,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
 @RequestMapping("/student/v1/api")
+@CrossOrigin(origins = "http://localhost:4200")
 @Tag(name = "Student API " ,description = "Student CRUD OPERATION WITH JPA")
 public class StudentController {
 
@@ -66,7 +68,7 @@ public class StudentController {
 		}
 	}
 	
-	@GetMapping("/{id}")
+	@GetMapping("/getbyId/{id}")
 	@Operation(method = "getStudentByID",description = "Get student to DB")
 	public ResponseEntity<Optional<Student>> getStudentById(@PathVariable int id){
 		Optional<Student> obj = service.getStudentById(id);
@@ -79,7 +81,7 @@ public class StudentController {
 		}
 	}
 	
-	@PutMapping("/{id}")
+	@PutMapping("/updateById/{id}")
 	@Operation(method = "updateStudentById",description = "update student data to DB")
 	public ResponseEntity<Student> updateStudentById(@PathVariable int id , @RequestBody Student std){
 		std.setId(id);
@@ -93,7 +95,7 @@ public class StudentController {
 		}
 	}
 	
-	@DeleteMapping("/{id}")
+	@DeleteMapping("/deleteById/{id}")
 	@Operation(method = "deleteStudentById",description = "Delete student from DB")
 	public ResponseEntity<List<Student>> deleteStudentById(@PathVariable int id){
 		List<Student> obj = service.deleteStudentById(id);
@@ -106,7 +108,7 @@ public class StudentController {
 		}
 	}
 	
-	@GetMapping("/list")
+	@GetMapping("/get")
 	@Operation(method = "getAllStudents",description = "all student from db")
 	public ResponseEntity<List<Student>> getAllStudents(){
 		List<Student> obj = service.getAllStudents();
